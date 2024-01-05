@@ -13,6 +13,8 @@ struct ContentView: View {
         UILabel()
             .set(\.backgroundColor, value: .red)
             .set(\.text, value: "asdfasdf")
+            .set(\.numberOfLines, value: 0)
+            .set(\.backgroundColor, value: .blue)
             .swiftUIView()
             .fixedSize()
         
