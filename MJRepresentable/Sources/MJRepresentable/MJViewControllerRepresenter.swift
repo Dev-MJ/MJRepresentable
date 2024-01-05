@@ -8,13 +8,10 @@
 import SwiftUI
 
 public struct MJViewControllerRepresenter<V: UIViewController>: UIViewControllerRepresentable {
+    
     public typealias UIViewControllerType = V
     private var child: V
-    
-    public init(_ child: V) {
-        self.child = child
-    }
-    
+   
     public init(_ child: () -> V) {
         self.child = child()
     }
