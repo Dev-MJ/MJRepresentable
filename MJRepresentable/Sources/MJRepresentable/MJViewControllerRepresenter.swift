@@ -11,7 +11,11 @@ public struct MJViewControllerRepresenter<V: UIViewController>: UIViewController
     
     public typealias UIViewControllerType = V
     private var child: V
-   
+    
+    init(_ child: V) {
+        self.child = child
+    }
+    
     public init(_ child: () -> V) {
         self.child = child()
     }

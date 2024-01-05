@@ -11,6 +11,10 @@ public struct MJViewRepresenter<V: UIView>: UIViewRepresentable {
     public typealias UIViewType = V
     private var child: V
     
+    init(_ child: V) {
+        self.child = child
+    }
+    
     public init(_ child: () -> V) {
         self.child = child()
     }
