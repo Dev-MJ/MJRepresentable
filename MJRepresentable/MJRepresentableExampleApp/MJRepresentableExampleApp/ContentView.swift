@@ -11,7 +11,6 @@ import MJRepresentable
 struct ContentView: View {
     var body: some View {
         UILabel()
-//            .set(\.frame, value: CGRect(x: 20, y: 30, width: 30, height: 60))
             .set(\.backgroundColor, value: .red)
             .set(\.text, value: "asdfasdf")
             .swiftUIView()
