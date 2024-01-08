@@ -18,7 +18,7 @@ struct ContentView: View {
             .swiftUIView()
             .fixedSize()
         
-        MJViewRepresenter {
+        UIViewRepresenter {
             let b = UIButton()
             b.setTitle("asdfasdf", for: .normal)
             b.backgroundColor = .blue

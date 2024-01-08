@@ -10,12 +10,12 @@ import SwiftUI
 
 public extension UIView {
     func swiftUIView() -> some View {
-        MJViewRepresenter(self)
+        UIViewRepresenter(self)
     }
 }
 
 public extension UIViewController {
     func swiftUIView() -> some View {
-        MJViewControllerRepresenter(self)
+        UIViewControllerRepresenter(self)
     }
 }

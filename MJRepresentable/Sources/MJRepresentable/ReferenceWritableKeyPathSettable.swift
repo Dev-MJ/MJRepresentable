@@ -1,5 +1,5 @@
 //
-//  UIViewKeyPathReferenceWritable.swift
+//  ReferenceWritableKeyPathSettable.swift
 //
 //
 //  Created by MJ.Lee on 1/5/24.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-public protocol UIKitKeyPathReferenceWritable {
+public protocol ReferenceWritableKeyPathSettable {
     associatedtype T
-    associatedtype VIEW
+    associatedtype Object
     
     func set<Value>(_ keyPath: ReferenceWritableKeyPath<T, Value>, 
-                    value: Value) -> VIEW
+                    value: Value) -> Object
 }
 
-public extension UIKitKeyPathReferenceWritable where Self: UIView {
+public extension ReferenceWritableKeyPathSettable where Self: UIView {
     func set<Value>(_ keyPath: ReferenceWritableKeyPath<Self, Value>,
                     value: Value) -> Self {
         self[keyPath: keyPath] = value
@@ -23,7 +23,7 @@ public extension UIKitKeyPathReferenceWritable where Self: UIView {
     }
 }
 
-public extension UIKitKeyPathReferenceWritable where Self: UIViewController {
+public extension ReferenceWritableKeyPathSettable where Self: UIViewController {
     func set<Value>(_ keyPath: ReferenceWritableKeyPath<Self, Value>,
                     value: Value) -> Self {
         self[keyPath: keyPath] = value
@@ -31,5 +31,5 @@ public extension UIKitKeyPathReferenceWritable where Self: UIViewController {
     }
 }
 
-extension UIView: UIKitKeyPathReferenceWritable { }
-extension UIViewController: UIKitKeyPathReferenceWritable { }
+extension UIView: ReferenceWritableKeyPathSettable { }
+extension UIViewController: ReferenceWritableKeyPathSettable { }

@@ -1,5 +1,5 @@
 //
-//  MJRepresenter.swift
+//  UIViewRepresenter.swift
 //
 //
 //  Created by MJ.Lee on 1/5/24.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-public struct MJViewRepresenter<V: UIView>: UIViewRepresentable {
+public struct UIViewRepresenter<V: UIView>: UIViewRepresentable {
     public typealias UIViewType = V
-    private var child: V
+    private var child: UIViewType
     
-    init(_ child: V) {
+    init(_ child: UIViewType) {
         self.child = child
     }
     
-    public init(_ child: () -> V) {
+    public init(_ child: () -> UIViewType) {
         self.child = child()
     }
     
